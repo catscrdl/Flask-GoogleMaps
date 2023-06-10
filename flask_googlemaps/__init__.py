@@ -894,7 +894,7 @@ def get_coordinates_from_place(API_KEY, place_id):
         + "&key="
         + API_KEY
     ).json()
-    return response["results"][0]["geometry"]["location"]
+    return response["result"]["geometry"]["location"]
 
 
 def is_googlemaps_loaded():
