@@ -886,11 +886,11 @@ def get_coordinates(API_KEY, address_text):
     ).json()
     return response["results"][0]["geometry"]["location"]
 
-def get_coordinates_from_place(API_KEY, address_text):
+def get_coordinates_from_place(API_KEY, place_id):
     # type: (str, str) -> Dict
     response = requests.get(
-        "https://maps.googleapis.com/maps/api/geocode/json?address="
-        + address_text
+        "https://maps.googleapis.com/maps/api/place/details/json?place_id="
+        + place_id
         + "&key="
         + API_KEY
     ).json()
