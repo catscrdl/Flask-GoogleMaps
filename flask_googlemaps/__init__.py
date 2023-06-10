@@ -886,6 +886,16 @@ def get_coordinates(API_KEY, address_text):
     ).json()
     return response["results"][0]["geometry"]["location"]
 
+def get_coordinates_from_place(API_KEY, address_text):
+    # type: (str, str) -> Dict
+    response = requests.get(
+        "https://maps.googleapis.com/maps/api/geocode/json?address="
+        + address_text
+        + "&key="
+        + API_KEY
+    ).json()
+    return response["results"][0]["geometry"]["location"]
+
 
 def is_googlemaps_loaded():
     # type: () -> bool
